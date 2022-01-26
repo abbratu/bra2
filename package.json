@@ -1,0 +1,14 @@
+{
+  "name": "@bra2/ng",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/abbratu/bra2.git",
+  "author": "Adrian Bratu <adrian.bratu@amrock.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@angular/cli": "^13.1.4"
+  },
+  "scripts": {
+    "ng": "ng"
+  }
+}
