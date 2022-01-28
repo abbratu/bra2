@@ -3,6 +3,16 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
+    "paths": {
+      "@bra2/ng-core2": [
+        "dist/bra2/ng-core2/bra2-ng-core2",
+        "dist/bra2/ng-core2"
+      ],
+      "bra2-ng-core": [
+        "dist/bra2-ng-core/bra2-ng-core",
+        "dist/bra2-ng-core"
+      ]
+    },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
