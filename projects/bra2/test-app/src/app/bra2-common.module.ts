@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 @NgModule({
   imports: [
@@ -16,6 +17,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatDividerModule,
     MatIconModule,
     MatButtonModule,
+    MatSlideToggleModule
   ],
   exports: [
     BrowserAnimationsModule,
@@ -23,6 +25,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatDividerModule,
     MatIconModule,
     MatButtonModule,
+    MatSlideToggleModule
   ]
 })
 export class Bra2CommonModule { }
