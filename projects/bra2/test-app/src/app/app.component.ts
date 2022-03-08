@@ -1,19 +1,20 @@
 import { ChangeDetectorRef, Component, HostBinding } from '@angular/core';
+import { Brat2ThemeService } from './theme/bra2-theme.service';
 
-export type Bra2Theme = {
-  displayName: string,
-  className: string,
-}
+// export type Bra2Theme = {
+//   displayName: string,
+//   className: string,
+// }
 
-export const supportedThemes: Bra2Theme[] = [{
-  displayName: 'Bra2 Light Theme',
-  className: 'bra2-light-theme'
-}, {
-  displayName: 'Bra2 Dark Theme',
-  className: 'bra2-dark-theme'
-}]
+// export const supportedThemes: Bra2Theme[] = [{
+//   displayName: 'Bra2 Light Theme',
+//   className: 'bra2-light-theme'
+// }, {
+//   displayName: 'Bra2 Dark Theme',
+//   className: 'bra2-dark-theme'
+// }]
 
-export const defaultTheme: Bra2Theme = supportedThemes[0];
+// export const defaultTheme: Bra2Theme = supportedThemes[0];
 
 
 
@@ -23,24 +24,23 @@ export const defaultTheme: Bra2Theme = supportedThemes[0];
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  constructor(private readonly _cdRef: ChangeDetectorRef) {}
-  private _currentTheme: Bra2Theme = defaultTheme;
 
+  
   @HostBinding('class') get class(): string {
-    return 'mat-app-background ' + this._currentTheme.className
+    return 'mat-app-background ' + this._themeService.currentTheme.className;
   }
 
-  toggle(){
-    if (this._currentTheme === supportedThemes[0]) {
-      this._currentTheme = supportedThemes[1];
-    } else {
-      this._currentTheme = supportedThemes[0];
-    }
-
-    this._cdRef.detectChanges();
+  constructor(
+    private readonly _themeService: Brat2ThemeService,
+  ) {
   }
 
-  public get name(): string{
-    return this._currentTheme.displayName;
-  } 
+  toggle() {
+    this._themeService.currentThemeKey = this._themeService.currentThemeKey === 'bra2-light-theme' ?
+      'bra2-dark-theme' : 'bra2-light-theme';
+  }
+
+  public get name(): string {
+    return this._themeService.currentThemeDisplayName;
+  }
 }

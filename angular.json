@@ -105,6 +105,37 @@
           }
         }
       }
+    },
+    "@bra2/theme": {
+      "projectType": "library",
+      "root": "projects/bra2/theme",
+      "sourceRoot": "projects/bra2/theme/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/bra2/theme/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/bra2/theme/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/bra2/theme/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/bra2/theme/src/test.ts",
+            "tsConfig": "projects/bra2/theme/tsconfig.spec.json",
+            "karmaConfig": "projects/bra2/theme/karma.conf.js"
+          }
+        }
+      }
     }
   },
   "defaultProject": "@bra2/test-app"
