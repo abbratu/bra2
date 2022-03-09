@@ -1,12 +1,11 @@
 @use "@angular/material" as mat;
 @include mat.core();
 
-@import "./colors.scss";
+@import "./theme.scss";
+@import "./typography.scss";
 
-$brat2-test-app-primary: mat.define-palette($bra2-color-blue);
-$brat2-test-app-accent: mat.define-palette($bra2-color-yellow);
-$brat2-test-app-warn: mat.define-palette($bra2-color-red);
-
+@include mat.all-component-themes($brat2-test-light-app-theme);
+@include mat.core($bra2-typography-config);
 
 html {
   margin: 0;
@@ -19,32 +18,10 @@ html {
     padding: 0;
     height: 100%;
     width: 100%;
-
     font-family: Roboto, "Helvetica Neue", sans-serif;
 
-    .bra2-light-theme {
-      $brat2-test-light-app-theme: mat.define-light-theme(
-        (
-          color: (
-            primary: $brat2-test-app-primary,
-            accent: $brat2-test-app-accent,
-            warn: $brat2-test-app-warn,
-          ),
-        )
-      );
-      @include mat.all-component-themes($brat2-test-light-app-theme);
-    }
-
     .bra2-dark-theme {
-      $brat2-test-dark-app-theme: mat.define-dark-theme(
-        (
-          color: (
-            primary: $brat2-test-app-primary,
-            accent: $brat2-test-app-accent,
-            warn: $brat2-test-app-warn,
-          ),
-        )
-      );
+     
       @include mat.all-component-themes($brat2-test-dark-app-theme);
     }
   }

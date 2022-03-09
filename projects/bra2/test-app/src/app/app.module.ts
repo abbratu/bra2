@@ -18,10 +18,12 @@ import { Bra2ThemeModule } from './theme/bra2-theme.module';
         'bra2-light-theme': {
           displayName: 'Bra2 Light Theme',
           className: 'bra2-light-theme',
+          key: 'bra2-light-theme'
         },
         'bra2-dark-theme': {
-          displayName: 'Bra2 dark Theme',
+          displayName: 'Bra2 Dark Theme',
           className: 'bra2-dark-theme',
+          key: 'bra2-dark-theme'
         },
       }
     })

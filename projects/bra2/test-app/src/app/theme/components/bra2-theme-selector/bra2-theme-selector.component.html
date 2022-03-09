@@ -1,0 +1,5 @@
+<mat-select (selectionChange)="onSelectionChange($event.value)" [value]="value">
+  <mat-option *ngFor="let theme of themes" [value]="theme.key">
+    {{ theme.displayName }}
+  </mat-option>
+</mat-select>

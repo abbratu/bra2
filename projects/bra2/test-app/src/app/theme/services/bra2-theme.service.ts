@@ -1,22 +1,7 @@
-import { Inject, Injectable, InjectionToken } from '@angular/core';
-
-export type Bra2Theme = {
-  displayName: string;
-  className: string;
-};
-
-export type Bra2Themes = {
-  [name: string]: Bra2Theme;
-};
-
-export type Bra2ThemeConfig = {
-  defaultThemeKey: string;
-  supportedThemes: Bra2Themes;
-};
-
-export const Bra2ThemeConfigService = new InjectionToken<Bra2ThemeConfig>(
-  'Bra2ThemeConfig'
-);
+import { Inject, Injectable } from '@angular/core';
+import { Bra2ThemeConfigService } from './bra2-theme-config.service';
+import { Bra2ThemeConfig } from '../types/bra2-theme-config.type';
+import { Bra2Theme } from '../types/bra2-theme.type';
 
 @Injectable({
   providedIn: 'root',
@@ -62,5 +47,9 @@ export class Brat2ThemeService {
 
   public get currentThemeClassName(): string {
     return this.currentTheme.className;
+  }
+
+  public get themes(): Bra2Theme[] {
+    return Object.keys(this._config.supportedThemes).map((key) => this._config.supportedThemes[key]);
   }
 }
