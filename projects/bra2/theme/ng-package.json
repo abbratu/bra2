@@ -6,6 +6,7 @@
   },
   "assets": [
     "_index.scss",
-    "src/theme"
+    "src/theme",
+    "src/fonts"
   ]
 }

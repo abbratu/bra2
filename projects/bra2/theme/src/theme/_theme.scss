@@ -161,7 +161,7 @@ $brat2-v-dark-theme: mat.define-dark-theme(
 );
 @include mat.all-component-themes($brat2-v-light-theme);
 
-// FONTS
+// // FONTS
 @font-face {
   font-display: fallback;
   font-family: CadillacSans;
@@ -399,12 +399,11 @@ $brat2-v-dark-theme: mat.define-dark-theme(
 }
 
 // Typography
-
 $bra2-body-1: mat.define-typography-level(
   $font-family: Roboto,
   $font-weight: 400,
   $font-size: 16px,
-  $line-height: 1,
+  $line-height: 1.2em,
   $letter-spacing: normal,
 );
 
@@ -412,7 +411,7 @@ $bra2-body-2: mat.define-typography-level(
   $font-family: Roboto,
   $font-weight: 500,
   $font-size: 16px,
-  $line-height: 1,
+  $line-height: 1.2em,
   $letter-spacing: normal,
 );
 
@@ -420,7 +419,7 @@ $bra2-caption: mat.define-typography-level(
   $font-family: Roboto,
   $font-weight: 400,
   $font-size: 12px,
-  $line-height: 1,
+  $line-height: 1.2em,
   $letter-spacing: normal,
 );
 
@@ -428,7 +427,7 @@ $bra2-h1: mat.define-typography-level(
   $font-family: "CadillacSans,Arial,Helvetica,sans-serif",
   $font-weight: 700,
   $font-size: 40px,
-  $line-height: 1,
+  $line-height: 1.2em,
   $letter-spacing: normal,
 );
 
@@ -436,7 +435,7 @@ $bra2-h2: mat.define-typography-level(
   $font-family: "CadillacSans,Arial,Helvetica,sans-serif",
   $font-weight: 500,
   $font-size: 32px,
-  $line-height: 1,
+  $line-height: 1.2em,
   $letter-spacing: normal,
 );
 
@@ -444,7 +443,7 @@ $bra2-h3: mat.define-typography-level(
   $font-family: "CadillacSans,Arial,Helvetica,sans-serif",
   $font-weight: 400,
   $font-size: 24px,
-  $line-height: 1,
+  $line-height: 1.2em,
   $letter-spacing: normal,
 );
 
@@ -452,7 +451,7 @@ $bra2-h4: mat.define-typography-level(
   $font-family: "CadillacSans,Arial,Helvetica,sans-serif",
   $font-weight: 300,
   $font-size: 20px,
-  $line-height: 1,
+  $line-height: 1.2em,
   $letter-spacing: normal,
 );
 
@@ -470,7 +469,17 @@ $bra2-typography-config: mat.define-typography-config(
   $caption: $bra2-caption,
 );
 
+
+
 @include mat.core($bra2-typography-config);
+
+.mat-typography {
+  h1, h2, h3, h4 {
+    margin: 0;
+    padding: 0;
+    height: 1em;
+  }
+}
 
 // OVERALL
 html {
